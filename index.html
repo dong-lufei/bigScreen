@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大屏展示</title>
+  <!-- 引入 echarts 库文件 在线引入 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"
+    integrity="sha512-k37wQcV4v2h6jgYf5IUz1MoSKPpDs630XGSmCaCCOXxy2awgAWKHGZWr9nMyGgk3IOxA1NxdkN8r1JHgkUtMoQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h3 class="title">前端大数据看板</h3>
+
+  <div class="bodyBox">
+    <div class="topBox">
+      <div class="e1">
+        <div class="tit">柱状图 bar1</div>
+        <div class="ebox" id="e1"></div>
+      </div>
+      <div class="e2">
+        <div class="tit">饼图 pie</div>
+        <div class="ebox" id="e2"></div>
+      </div>
+      <div class="e3">
+        <div class="tit">柱状图 bar2</div>
+        <div class="ebox" id="e3"></div>
+      </div>
+    </div>
+    <div class="middleBox">
+      <div class="e4">
+        <div class="tit">折线图 line1</div>
+        <div class="ebox" id="e4"></div>
+      </div>
+      <div class="e5">
+        <div class="tit">柱状图 bar3</div>
+        <div class="ebox" id="e5"></div>
+      </div>
+    </div>
+    <div class="bottomBox">
+      <div class="e6">
+        <div class="tit">柱状图 bar3</div>
+        <div class="ebox" id="e6"></div>
+      </div>
+      <div class="e7">
+        <div class="tit">折线图 line2</div>
+        <div class="ebox" id="e7"></div>
+      </div>
+      <div class="e8">
+        <div class="tit">前端开发</div>
+        <div class="ebox" id="e8"></div>
+      </div>
+    </div>
+  </div>
+  <!-- 图表配置 -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
