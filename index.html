@@ -13,50 +13,76 @@
 </head>
 
 <body>
-  <h3 class="title">前端大数据看板</h3>
-
-  <div class="bodyBox">
-    <div class="topBox">
-      <div class="e1">
-        <div class="tit">柱状图 bar1</div>
-        <div class="ebox" id="e1"></div>
-      </div>
-      <div class="e2">
-        <div class="tit">饼图 pie</div>
-        <div class="ebox" id="e2"></div>
-      </div>
-      <div class="e3">
-        <div class="tit">柱状图 bar2</div>
-        <div class="ebox" id="e3"></div>
-      </div>
-    </div>
-    <div class="middleBox">
-      <div class="e4">
-        <div class="tit">折线图 line1</div>
-        <div class="ebox" id="e4"></div>
-      </div>
-      <div class="e5">
-        <div class="tit">柱状图 bar3</div>
-        <div class="ebox" id="e5"></div>
-      </div>
-    </div>
-    <div class="bottomBox">
-      <div class="e6">
-        <div class="tit">柱状图 bar3</div>
-        <div class="ebox" id="e6"></div>
-      </div>
-      <div class="e7">
-        <div class="tit">折线图 line2</div>
-        <div class="ebox" id="e7"></div>
-      </div>
-      <div class="e8">
-        <div class="tit">前端开发</div>
-        <div class="ebox" id="e8"></div>
+  <div class="container">
+    <div class="bodyBox">
+      <h3 class="title">前端大数据看板</h3>
+      <div class="content">
+        <div class="topBox">
+          <div class="e1">
+            <div class="tit">柱状图 bar1</div>
+            <div class="ebox" id="e1"></div>
+          </div>
+          <div class="e2">
+            <div class="tit">饼图 pie</div>
+            <div class="ebox" id="e2"></div>
+          </div>
+          <div class="e3">
+            <div class="tit">柱状图 bar2</div>
+            <div class="ebox" id="e3"></div>
+          </div>
+        </div>
+        <div class="middleBox">
+          <div class="e4">
+            <div class="tit">折线图 line1</div>
+            <div class="ebox" id="e4"></div>
+          </div>
+          <div class="e5">
+            <div class="tit">柱状图 bar3</div>
+            <div class="ebox" id="e5"></div>
+          </div>
+        </div>
+        <div class="bottomBox">
+          <div class="e6">
+            <div class="tit">柱状图 bar3</div>
+            <div class="ebox" id="e6"></div>
+          </div>
+          <div class="e7">
+            <div class="tit">折线图 line2</div>
+            <div class="ebox" id="e7"></div>
+          </div>
+          <div class="e8">
+            <div class="tit">前端开发</div>
+            <div class="ebox" id="e8"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <!-- 图表配置 -->
   <script src="./index.js"></script>
+  <script>
+    const dataScreenRef = document.querySelector('.bodyBox');
+
+    // 根据浏览器大小推断缩放比例
+    const getScale = (width = 1920, height = 1080) => {
+      let ww = window.innerWidth / width;
+      let wh = window.innerHeight / height;
+      return ww < wh ? ww : wh;
+    };
+    function init() {
+      dataScreenRef.style.transform = `scale(${getScale()}) translate(-50%, -50%)`;
+      dataScreenRef.style.width = `1920px`;
+      dataScreenRef.style.height = `1080px`;
+
+      window.addEventListener("resize", resize);
+    }
+    // 设置响应式
+    const resize = () => {
+      dataScreenRef.style.transform = `scale(${getScale()}) translate(-50%, -50%)`;
+    };
+
+    init()
+  </script>
 </body>
 
 </html>
