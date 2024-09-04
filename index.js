@@ -1329,8 +1329,8 @@ const debouncedInitialize = debounce(initialize, 200); // 防抖，延迟200ms�
 // 在页面加载时也执行一次初始化函数
 window.addEventListener("load", initialize);
 
-// 监听窗口尺寸变化事件
-window.addEventListener("resize", () => {
-  debouncedInitialize();
-  location.reload();
-}); // 使用防抖
+// // 监听窗口尺寸变化事件
+// window.addEventListener("resize", () => {
+//   debouncedInitialize();
+//   location.reload();
+// }); // 使用防抖
